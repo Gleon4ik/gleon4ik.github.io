@@ -75,4 +75,95 @@ canvas#snow {
     height: 100%;
     z-index: 0;
     pointer-events: none;
+	
+}
+	.copy-notification {
+    position: fixed;
+    bottom: 20px;
+    right: 20px;
+    background-color: rgba(0, 0, 0, 0.7); /* Полупрозрачный тёмный фон */
+    color: white;
+    padding: 10px 20px;
+    border-radius: 8px;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.2);
+    text-shadow: 0 2px 4px rgba(0, 0, 0, 0.5); /* Добавлена тень текста */
+    opacity: 0;
+    visibility: hidden;
+    transition: opacity 0.4s, transform 0.4s, visibility 0.4s;
+    transform: translateY(30px);
+    z-index: 1000;
+    font-size: 16px;
+    text-align: center;
+}
+
+.copy-notification.show {
+    opacity: 1;
+    visibility: visible;
+    transform: translateY(0);
+}
+
+
+
+html, body {
+    margin: 0;
+    padding: 0;
+    height: 100%;
+    width: 100%;
+    background: none; /* Убираем фон */
+    border: none; /* Убираем границы */
+}
+
+
+.background-video {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    overflow: hidden;
+    z-index: -1; /* За контентом */
+    box-shadow: none !important; /* Убираем тени */
+    border: none; /* Убираем границы */
+}
+
+
+/* Контейнер для звёздочек */
+.star-fx-container {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    pointer-events: none; /* Отключаем взаимодействие с этим элементом */
+    z-index: 1000; /* За контентом */
+}
+
+/* Стили для звёздочек */
+.star {
+    position: absolute;
+    width: 8px;
+    height: 8px;
+    background-color: #fff; /* Белые звёздочки */
+    border-radius: 50%;
+    animation: star-animation 1s ease-out forwards;
+    pointer-events: none; /* Звёздочки не взаимодействуют с пользователем */
+}
+
+@keyframes star-animation {
+    0% {
+        transform: scale(0) translate(0, 0);
+        opacity: 1;
+    }
+    100% {
+        transform: scale(1) translate(0, 0);
+        opacity: 0;
+    }
+}
+
+
+
+}
+
+}
+
 }
