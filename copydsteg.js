@@ -1,14 +1,12 @@
 document.getElementById("copy-discord").addEventListener("click", (event) => {
-    event.preventDefault(); // Отменяем стандартное действие ссылки
+    event.preventDefault(); 
 
-    const discordTag = "nursultan.tech"; // Твой Discord-тег
+    const discordTag = "nursultan.tech"; 
     navigator.clipboard.writeText(discordTag).then(() => {
         const notification = document.getElementById("copy-notification");
 
-        // Показать уведомление
         notification.classList.add("show");
 
-        // Скрыть уведомление через 2 секунды
         setTimeout(() => {
             notification.classList.remove("show");
         }, 2000);
